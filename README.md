@@ -10,18 +10,11 @@ Comenzando por **git git clone https://github.com/my_calculator   my_calculator_
 A continuación, se creó una rama que partiera del primer commit nombrado como <x^3 button>, con los commits **git log --oneline**, por el cual copiamos el id del 
 commit de interés y lo reservamos para introducirlo en el siguiente comando que fue el encargado de crear nuestra nueva rama  **git checkout -b ops <id_de_commit>** 
 
-Posteriormente, la nueva rama que se creó nombrada como "ops", 
-tras este paso, se asignó el repositorio remoto que habíamos creado en Git hub con ** git remote add origin https://github.com/<mi usuario de github>/my_calculator.git**
+Posteriormente, en la nueva rama que se creó nombrada como "ops", se añadieron los botones de x^2 y 1/x, introduciendo primero el código de la x^2 en el 
+archivo index.html. Una vez se añadió el código se guardaron los cambios y se ejecutaron los comandos **git add index.html** y **git commit -m "mensaje de interés según el botón"**
 
-Después, se creó un archivo html al que hemos nombrado como index.html **nano index.html**, este fichero contiene una calculadora web con un botón para hayar el cubo del número introducido 
-Una vez completado el fichero, se añadió en el índice **git add index.html** y se efectuó el primer commit en la rama master con **git commit -m "x^3 button"**. 
-Para comprobar el listado de los commits se utilizó **git log --oneline**.
+Después, se integró la rama ops en la rama master a partir del commit "1/x button", donde se copió el id del commit para utilizarlo posteriormente para hacer el rabase. Se utilizó **git log --oneline** para conocer el id del commit.
 
-Tras el primer commit, se hizo un segundo en la misma rama en la que se estaba trabajando, la rama main. 
-Este segundo commit consistio en añadir a la calculadora un segundo botón(elemento HTML <button ..>)
-que eleve un número a la cuarta potencia (x^4)
+Se resolvieron los conflictos desde el archivo index.html de forma manual, se añadieron los cambios con **git add .**, y **con git rebase --continue** se integró la rama ops introduciendo los cambios en el índice y se añadió un commit.
 
-Para llevarlo a cabo se modificó el fichero index.html **nano index.html**, y se cambió el código añadiendo el botón nuevo (x^4)
-Se registraron los cambios en el índice **git add index.html** y  se realizó el segundo commit **git commit -m "x^4 button"**.
-
-El último paso fue llevar los cambios al repositorio remoto con **git push**
+Una vez se resolvieron todos los conflictos y el commit fue generado ya se efectuó el rebase se realizó el push llevando los cambios al repositorio remoto.

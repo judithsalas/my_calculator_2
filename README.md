@@ -1,4 +1,5 @@
-#Proyecto calculadora 2#
+**Proyecto calculadora 2**
+
 Para la realización del proyecto se han seguido los siguientes pasos:
 
 En primer lugar, se creó un repositorio público en github nombrado *my_calculator_2*, donde se añadió el clon del repositorio my_calculator 
